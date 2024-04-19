@@ -49,10 +49,12 @@ def summary(choice):
         print(review)
     else:
         summary = review[:30]
-        last_space_index = summary.rfind(' ')
-        if last_space_index != -1:
-            summary = summary[:last_space_index]
+        lspace = summary.rfind(' ')
+        if lspace != -1:
+            summary = summary[:lspace]
         print(summary + '...')
+
+        # Found rfind() on w3schools.
 
 
 
