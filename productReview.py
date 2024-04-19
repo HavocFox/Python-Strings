@@ -15,9 +15,14 @@ not_nice = ['bad', 'poor', 'average']
 for review in reviews:
     modified_review = review
     for keyword in keywords:
-        if keyword.upper() in modified_review.upper():
+        if keyword in modified_review:
             modified_review = modified_review.replace(keyword, keyword.upper())
+        elif keyword.upper() in modified_review.upper():
+            modified_review = modified_review.replace(keyword.title(), keyword.upper())
     print(modified_review)
+
+    #Two checks for keyword as "Poor" being capitalized trips up the logic.
+
 
 def posneg(choice):
     pos_tally = 0
